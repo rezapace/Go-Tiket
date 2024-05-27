@@ -1,0 +1,1 @@
+INSERT INTO "notifications" ("id", "type", "message", "is_read", "created_at", "updated_at", "deleted_at") VALUES (1, 'Diskon Ticket', 'ada diskon loh cek berikut', 't', '2023-12-02 06:17:03.644111', '2023-12-04 02:57:58.692812', '0001-01-01 00:00:00');
