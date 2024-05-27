@@ -76,8 +76,8 @@ https://github.com/rezapace/Go-Tiket/blob/main/output/Backend%20Ticketing.postma
 
 <table>
   <tr>
-    <td><img src="https://github.com/rezapace/Go-Tiket/blob/main/Materi/flow%201.png" alt="Figma 1"></td>
-    <td><img src="https://raw.githubusercontent.com/Capstone-Mikti/Capstone-3/main/Materi/flow%202.png" alt="Figma 2"></td>
+    <td><img src="https://github.com/rezapace/Go-Tiket/blob/main/Materi/flow%201.png?raw=true" alt="Figma 1"></td>
+    <td><img src="https://github.com/rezapace/Go-Tiket/blob/main/Materi/flow%202.png?raw=true" alt="Figma 2"></td>
   </tr>
 </table>
 <table>
