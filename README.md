@@ -18,13 +18,15 @@ cd go-tiket
 
 3. Cek file env dan sesuaikan dengan konfigurasi database yang digunakan
 
-4. Jalankan perintah untuk membuat database dan lakukan migrate
+4. Aktifkan database PostgreSQL
+
+5. Jalankan perintah untuk membuat database dan lakukan migrate
     
 ```bash
 go run cmd/migrate/main.go
 ```
 
-5. Jalankan aplikasi
+6. Jalankan aplikasi
 
 ```bash
 go mod tidy
