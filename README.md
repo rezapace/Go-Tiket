@@ -1,38 +1,38 @@
 # Go-Tiket 🎫
  
 ## Description 📓
-It is a backend application using the Golang programming language that functions to purchase train tickets. This application is made using the Clean Architecture concept and uses the PostgreSQL database as data storage.
+It is a backend application using the **Golang** programming language that functions to **purchase tickets.** This application is made using the Clean Architecture concept and uses the **PostgreSQL** database as data storage.
 
 ## How to Run 📓
-1. Clone repository
+**1. Clone repository**
 
 ```bash
 git clone https://github.com/rezapace/go-tiket
 ```
 
-2. Enter the repository directory
+**2. Enter the repository directory**
 
 ```bash
 cd go-tiket
 ```
 
-3. Check the env file and adjust it to the database configuration being used
+**3. Check the env file and adjust it to the database configuration being used**
 
-4. Enable the PostgreSQL database
+**4. Enable the PostgreSQL database**
 
-5. Run the command to create the database and migrate it.
+**5. Run the command to create the database and migrate it.**
     
 ```bash
 migrate -database "postgres://postgres:pass@localhost:5432/weather-app?sslmode=disable" -path db/migration-golang up
 ```
-### Note:
-- make sure you have installed the migrate cli
+**Note:**
+- Make sure you have installed the migrate cli
 ```bash
 scoop install migrate
 ```
-- make sure you have installed the postgresql driver
+- Make sure you have installed the postgresql driver
 
-6. Jalankan aplikasi
+**6. Run the app**
 
 ```bash
 go mod tidy
@@ -41,7 +41,7 @@ go run cmd/server/main.go
 
 ## Detail Proyek 📓
 
-**Project Theme:** Aplikasi Ticketing."
+**Project Theme:** Ticketing Application.
 
 **Description:** This platform is used for buying and selling concert and event tickets. Users can register as buyers and search for concert schedules according to their needs, as well as pay for tickets online. The platform also provides accurate information about ongoing events.
 
