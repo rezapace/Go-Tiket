@@ -1,4 +1,4 @@
-# Go-Tiket
+# Go-Tiket 🎫
  
 ## Description
 Merupakan aplikasi backend dengan menggunakan bahasa pemerograman Golang yang berfungsi untuk melakukan pembelian tiket kereta api. Aplikasi ini dibuat dengan menggunakan konsep Clean Architecture dan menggunakan database PostgreSQL sebagai penyimpanan data.
