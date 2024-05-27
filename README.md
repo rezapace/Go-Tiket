@@ -82,7 +82,7 @@ https://github.com/rezapace/Go-Tiket/blob/main/output/Backend%20Ticketing.postma
 </table>
 <table>
   <tr>
-    <td><img src="https://github.com/rezapace/Go-Tiket/blob/main/Materi/postman.jpg?raw=true" alt="Figma 1"></td>
-    <td><img src="https://github.com/rezapace/Go-Tiket/blob/main/Materi/postman.jpg?raw=true" alt="Figma 2"></td>
+    <td><img src="https://github.com/rezapace/Go-Tiket/blob/main/Materi/postman.jpg?raw=true" alt="Postman"></td>
+    <td><img src="https://github.com/rezapace/Go-Tiket/blob/main/Materi/postman.jpg?raw=true" alt="Database"></td>
   </tr>
 </table>
