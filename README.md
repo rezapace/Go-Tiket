@@ -23,8 +23,14 @@ cd go-tiket
 5. Jalankan perintah untuk membuat database dan lakukan migrate
     
 ```bash
-go run cmd/migrate/main.go
+migrate -database "postgres://postgres:pass@localhost:5432/weather-app?sslmode=disable" -path db/migration-golang up
 ```
+### Note:
+- pastikan sudah menginstall migrate cli
+```bash
+scoop install migrate
+```
+- pastikan sudah menginstall driver postgresql
 
 6. Jalankan aplikasi
 
