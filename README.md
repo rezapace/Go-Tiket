@@ -76,6 +76,8 @@ output\Backend Ticketing.postman_collection.json
 https://github.com/rezapace/Go-Tiket/blob/main/output/Backend%20Ticketing.postman_collection.json
 ```
 
+
+## Image Collection
 <table>
   <tr>
     <td><img src="https://github.com/rezapace/Go-Tiket/blob/main/Materi/flow%201.png?raw=true" alt="Figma 1"></td>
@@ -85,6 +87,6 @@ https://github.com/rezapace/Go-Tiket/blob/main/output/Backend%20Ticketing.postma
 <table>
   <tr>
     <td><img src="https://github.com/rezapace/Go-Tiket/blob/main/Materi/postman.jpg?raw=true" alt="Postman"></td>
-    <td><img src="https://github.com/rezapace/Go-Tiket/blob/main/Materi/postman.jpg?raw=true" alt="Database"></td>
+    <td><img src="https://github.com/rezapace/Go-Tiket/blob/main/Materi/navichat.jpg?raw=true" alt="Database"></td>
   </tr>
 </table>
