@@ -6,7 +6,7 @@ import (
 	"context"
 	"errors"
 
-	"Rental/entity"
+	"Ticketing/entity"
 
 	"gorm.io/gorm"
 )
@@ -175,3 +175,17 @@ func (r *UserRepository) FindByID(ctx context.Context, id int64) (*entity.User, 
 	return user, nil
 }
 
+// TanyaAI
+// func (r *UserRepository) TanyaAI(ctx context.Context, user *entity.User) error {
+// 	return nil
+// }
+
+//BuyerCreateAccount
+// func (r *UserRepository) BuyerCreateAccount(ctx context.Context, user *entity.User) error {
+// 	//menggunakan db untuk melakukan query ke database
+// 	err := r.db.WithContext(ctx).Create(&user).Error // pada line ini akan melakukan query "INSERT INTO users"
+// 	if err != nil {
+// 		return err
+// 	}
+// 	return nil
+// }

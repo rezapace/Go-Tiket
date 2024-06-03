@@ -9,46 +9,47 @@ type User struct {
 	Name      string     `json:"name"`
 	Email     string     `json:"email"`
 	Number    string     `json:"number"`
-	Role      string     `json:"role"`
-	Balance   float64    `json:"balance"`
+	Roles     string     `json:"roles"`
+	Saldo     int64      `json:"saldo"`
 	Password  string     `json:"-"`
 	CreatedAt time.Time  `json:"created_at"`
 	UpdatedAt time.Time  `json:"updated_at"`
 	DeletedAt *time.Time `json:"deleted_at,omitempty"`
 }
+
 // Admin New User
-func NewUser(name, email, number, password, role string, balance int64) *User {
+func NewUser(name, email, number, password, roles string, saldo int64) *User {
 	return &User{
 		Name:      name,
 		Email:     email,
 		Number:    number,
-		Role:     role,
-		Balance:     balance,
+		Roles:     roles,
+		Saldo:     saldo,
 		Password:  password,
 		CreatedAt: time.Now(),
 	}
 }
 
 // Admin Update User
-func UpdateUser(id int64, name, email, number, role, password string, balance int64) *User {
+func UpdateUser(id int64, name, email, number, roles, password string, saldo int64) *User {
 	return &User{
 		ID:        id,
 		Name:      name,
 		Email:     email,
 		Number:    number,
-		Role:     role,
+		Roles:     roles,
 		Password:  password,
-		Balance:     balance,
+		Saldo:     saldo,
 		UpdatedAt: time.Now(),
 	}
 }
 
 // Public Register
-func Register(email, password, role, number string) *User {
+func Register(email, password, roles, number string) *User {
 	return &User{
 		Email:    email,
 		Password: password,
-		Role:    role,
+		Roles:    roles,
 		Number:   number,
 	}
 }
@@ -73,10 +74,10 @@ func DeleteUserSelfByEmail(email string) *User {
 	}
 }
 
-func UpgradeBalance(id int64, balance int64) *User {
+func UpgradeSaldo(id int64, saldo int64) *User {
 	return &User{
 		ID:    id,
-		Balance: balance,
+		Saldo: saldo,
 	}
 }
 
@@ -88,9 +89,9 @@ func UserLogout(id int64) *User {
 }
 
 // updatesaldo
-func UpdateBalance(id int64, balance int64) *User {
+func UpdateSaldo(id int64, saldo int64) *User {
 	return &User{
 		ID:    id,
-		Balance: balance,
+		Saldo: saldo,
 	}
 }

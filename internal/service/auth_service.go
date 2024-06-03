@@ -1,7 +1,7 @@
 package service
 
 import (
-	"Rental/entity"
+	"Ticketing/entity"
 	"context"
 	"errors"
 
@@ -97,3 +97,13 @@ func NewBuyerCreateAccountService(repository BuyerCreateAccountRepository) *buye
 		repository: repository,
 	}
 }
+
+// func (s *buyercreateaccountService) BuyerCreateAccount(ctx context.Context, user *entity.User) error {
+// 	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(user.Password), bcrypt.DefaultCost)
+// 	if err != nil {
+// 		return err
+// 	}
+
+// 	user.Password = string(hashedPassword)
+// 	return s.repository.BuyerCreateAccount(ctx, user)
+// }

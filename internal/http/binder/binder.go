@@ -1,7 +1,7 @@
 package binder
 // folder ini digunakan untuk mengcombine data yang diinputkan dengan data yang diinginkan
 import (
-	internalValidator "Rental/internal/http/validator"
+	internalValidator "Ticketing/internal/http/validator"
 
 	"github.com/creasty/defaults"
 	"github.com/go-playground/validator/v10"

@@ -1,10 +1,10 @@
 package server
 
 import (
-	"Rental/common"
-	"Rental/internal/config"
-	"Rental/internal/http/binder"
-	"Rental/internal/http/router"
+	"Ticketing/common"
+	"Ticketing/internal/config"
+	"Ticketing/internal/http/binder"
+	"Ticketing/internal/http/router"
 	"net/http"
 
 	"github.com/golang-jwt/jwt/v5"

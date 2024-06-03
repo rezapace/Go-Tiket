@@ -1,0 +1,5318 @@
+{
+	"info": {
+		"_postman_id": "475ee4c6-91f3-44de-bd51-5cdc49298a10",
+		"name": "Backend Ticketing",
+		"description": "Documentation API untuk program aplikasi pembayaran tiket menggunakan bahasa Go",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26142588",
+		"_collection_link": "https://ticketing-mikti.postman.co/workspace/Ticketing-Workspace~1c7b0ec0-f35f-4273-b1d6-67507ad4c237/collection/26142588-475ee4c6-91f3-44de-bd51-5cdc49298a10?action=share&source=collection_link&creator=26142588"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "Create User",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"Reza\",\r\n    \"email\" : \"RezaHidayat@Gmail.com\",\r\n    \"number\": \"082210811378\",\r\n    \"roles\" : \"Admin\",\r\n    \"password\" : \"Djarum76\",\r\n    \"saldo\": 1000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/users",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"users"
+									]
+								},
+								"description": "berikut merupakan endpoint untuk membuat data atau akun user."
+							},
+							"response": [
+								{
+									"name": "Example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\" : \"Reza\",\r\n    \"email\" : \"RezaHidayat@Gmail.com\",\r\n    \"number\": \"082210811378\",\r\n    \"roles\" : \"Admin\",\r\n    \"password\" : \"Djarum76\",\r\n    \"saldo\": 1000\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/users",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"users"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 01 Dec 2023 22:51:08 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "28"
+										}
+									],
+									"cookie": [],
+									"body": "\"User created successfully\""
+								}
+							]
+						},
+						{
+							"name": "Get All User",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/users",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"users"
+									]
+								},
+								"description": "berikut merupakan endpoint untuk menampilkan seluruh data user"
+							},
+							"response": [
+								{
+									"name": "Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/users",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"users"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 01 Dec 2023 22:51:40 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "980"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"name\": \"\",\n            \"email\": \"Admin@gmail.com\",\n            \"number\": \"00000000000\",\n            \"roles\": \"Admin\",\n            \"saldo\": 0,\n            \"created_at\": \"2023-12-01T23:38:43.332476+07:00\",\n            \"updated_at\": \"2023-12-01T23:38:43.332476+07:00\"\n        },\n        {\n            \"id\": 1,\n            \"name\": \"\",\n            \"email\": \"Admin@gmail.com\",\n            \"number\": \"00000000000\",\n            \"roles\": \"Admin\",\n            \"saldo\": 9999800,\n            \"created_at\": \"2023-12-01T22:19:22.698594+07:00\",\n            \"updated_at\": \"2023-12-01T23:40:34.288419+07:00\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"\",\n            \"email\": \"Admin@gmail.com\",\n            \"number\": \"00000000000\",\n            \"roles\": \"Admin\",\n            \"saldo\": 0,\n            \"created_at\": \"2023-12-02T04:00:08.15209+07:00\",\n            \"updated_at\": \"2023-12-02T04:00:08.15209+07:00\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"\",\n            \"email\": \"Buyer@gmail.com\",\n            \"number\": \"00000000000\",\n            \"roles\": \"Buyer\",\n            \"saldo\": 0,\n            \"created_at\": \"2023-12-02T04:00:49.67267+07:00\",\n            \"updated_at\": \"2023-12-02T04:00:49.67267+07:00\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Reza\",\n            \"email\": \"RezaHidayat@Gmail.com\",\n            \"number\": \"082210811378\",\n            \"roles\": \"Djarum76\",\n            \"saldo\": 1000,\n            \"created_at\": \"2023-12-02T05:51:08.376309+07:00\",\n            \"updated_at\": \"2023-12-02T05:51:08.390398+07:00\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Get User By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/users/1",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"users",
+										"1"
+									]
+								},
+								"description": "berikut merupakan endpoint untuk menampilkan data user berdasarkan ID yang ingin diinginkan."
+							},
+							"response": [
+								{
+									"name": "Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/users/1",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"users",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 01 Dec 2023 22:52:21 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "241"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"created\": \"2023-12-01T22:19:22.698594+07:00\",\n        \"email\": \"Admin@gmail.com\",\n        \"id\": 1,\n        \"name\": \"\",\n        \"number\": \"00000000000\",\n        \"password\": \"$2a$10$c8VMh9ruzUM.rEr5PJk1GOY75G0OXXtOo2VkLIfHgiM6FDLb96JEO\",\n        \"updated\": \"2023-12-01T23:40:34.288419+07:00\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Edit User",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Ravita\",\r\n    \"email\": \"Ravita@gmail.com\",\r\n    \"number\": \"082210811377\",\r\n    \"roles\": \"Buyer\",\r\n    \"saldo\": 100\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/users/1",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"users",
+										"1"
+									]
+								},
+								"description": "berikut merupakan endpoint untuk mengupdate atau memperbarui data user berdasarkan ID user."
+							},
+							"response": [
+								{
+									"name": "Example",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Ravita\",\r\n    \"email\": \"Ravita@gmail.com\",\r\n    \"number\": \"082210811377\",\r\n    \"roles\": \"Buyer\",\r\n    \"saldo\": 100\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/users/1",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"users",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 01 Dec 2023 22:54:02 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "38"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": \"succesfully update user\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete User",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/users/2",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"users",
+										"2"
+									]
+								},
+								"description": "berikut merupakan endpoint untuk menghapus secara permanen data user berdasarkan ID, ketika data atau akun tersebut sudah tidak terpakai."
+							},
+							"response": [
+								{
+									"name": "Example",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/api/v1/users/2",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"v1",
+												"users",
+												"2"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 01 Dec 2023 22:54:27 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "40"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"User deleted successfully\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Logout Copy",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/user/logout",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"user",
+										"logout"
+									]
+								},
+								"description": "Endpoint ini digunakan untuk melakukan logout ketika sudah tidak ingin menggunakan program atau aplikasi tersebut."
+							},
+							"response": [
+								{
+									"name": "Logout",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/user/logout",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"user",
+												"logout"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 04 Dec 2023 20:08:02 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "38"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": \"successfully logged out\"\n}"
+								}
+							]
+						}
+					],
+					"description": "Folder ini berfungsi untuk membuat akun user, update data user, get all data user, get user by ID, dan delete user pada bagian atau sisi admin."
+				},
+				{
+					"name": "Ticket",
+					"item": [
+						{
+							"name": "Create Ticket",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"coldplay\",\r\n    \"description\": \"penyanyi luar negri\",\r\n    \"image\": \"https/image\",\r\n    \"location\": \"GBK\",\r\n    \"date\": \"2023-12-31T18:00:01Z\", // Format tanggal dan waktu sesuai dengan RFC3339\r\n    \"status\": \"available\",\r\n    \"price\": 50.0,\r\n    \"quota\": 100,\r\n    \"terjual\": 5,\r\n    \"category\": \"music\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/ticket",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"ticket"
+									]
+								},
+								"description": "berikut merupakan endpoint untuk membuat data atau daftar tiket yang akan dijual oleh seorang admin."
+							},
+							"response": [
+								{
+									"name": "Example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"title\": \"coldplay\",\r\n    \"description\": \"penyanyi luar negri\",\r\n    \"image\": \"https/image\",\r\n    \"location\": \"GBK\",\r\n    \"date\": \"2023-12-31T18:00:01Z\", // Format tanggal dan waktu sesuai dengan RFC3339\r\n    \"status\": \"available\",\r\n    \"price\": 50.0,\r\n    \"quota\": 100,\r\n    \"terjual\": 5,\r\n    \"category\": \"music\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{URL}}/ticket",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"ticket"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 01 Dec 2023 22:58:11 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "30"
+										}
+									],
+									"cookie": [],
+									"body": "\"Ticket created successfully\""
+								}
+							]
+						},
+						{
+							"name": "Get All Ticket",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/ticketa",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"ticketa"
+									]
+								},
+								"description": "berikut merupakan endpoint untuk melihat secara keseluruhan daftar tiket yang ada pada program ini."
+							},
+							"response": [
+								{
+									"name": "Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/ticketa",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"ticketa"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 01 Dec 2023 23:01:27 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "636"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"image\": \"https/image\",\n            \"location\": \"GBK\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"coldplay3\",\n            \"description\": \"penyanyi luar negri\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 96,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        },\n        {\n            \"id\": 2,\n            \"image\": \"https/image\",\n            \"location\": \"GBK\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"coldplay3\",\n            \"description\": \"penyanyi luar negri\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 100,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        },\n        {\n            \"id\": 3,\n            \"image\": \"https/image\",\n            \"location\": \"GBK\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"coldplay\",\n            \"description\": \"penyanyi luar negri\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 100,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Ticket By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/ticket/1",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"ticket",
+										"1"
+									]
+								},
+								"description": "berikut merupakan endpoint untuk melihat daftar tiket yang ada berdasarkan ID tiket."
+							},
+							"response": [
+								{
+									"name": "Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/ticket/1",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"ticket",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 01 Dec 2023 23:01:43 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "224"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"category\": \"music\",\n        \"created\": \"2023-12-01T22:20:09.060639Z\",\n        \"date\": \"2023-12-31T00:00:00Z\",\n        \"description\": \"penyanyi luar negri\",\n        \"id\": 1,\n        \"image\": \"https/image\",\n        \"location\": \"GBK\",\n        \"price\": 50,\n        \"quota\": 96,\n        \"title\": \"coldplay3\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Ticket",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Dragon\",\r\n    \"description\": \"konser lagu edm terbaik\",\r\n    \"image\": \"https/image\",\r\n    \"location\": \"bekasi\",\r\n    \"date\": \"2023-12-31T18:00:00Z\", // Format tanggal dan waktu sesuai dengan RFC3339\r\n    \"category\": \"music\",\r\n    \"price\": 50.0,\r\n    \"quota\": 200\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/ticket/1",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"ticket",
+										"1"
+									]
+								},
+								"description": "berikut merupakan endpoint untuk memperbarui data tiket yang ada berdasarkan ID tiket yang sudah terdaftar sebelumnya."
+							},
+							"response": [
+								{
+									"name": "Example",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"title\": \"Dragon\",\r\n    \"description\": \"konser lagu edm terbaik\",\r\n    \"image\": \"https/image\",\r\n    \"location\": \"bekasi\",\r\n    \"date\": \"2023-12-31T18:00:00Z\", // Format tanggal dan waktu sesuai dengan RFC3339\r\n    \"category\": \"music\",\r\n    \"price\": 50.0,\r\n    \"quota\": 200\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{URL}}/ticket/1",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"ticket",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 01 Dec 2023 23:03:34 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "261"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"category\": \"music\",\n        \"date\": \"2023-12-31T18:00:00Z\",\n        \"description\": \"konser lagu edm terbaik\",\n        \"id\": 1,\n        \"image\": \"https/image\",\n        \"location\": \"bekasi\",\n        \"price\": 50,\n        \"quota\": 200,\n        \"title\": \"Dragon\",\n        \"update\": \"0001-01-01T00:00:00Z\"\n    },\n    \"message\": \"Ticket updated successfully\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete Ticket",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/ticket/1",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"ticket",
+										"1"
+									]
+								},
+								"description": "berikut merupakan endpoint untuk menghapus data tiket yang ada pada daftar tiket, ketika data tiket tersebut sudah tidak digunakan kembali."
+							},
+							"response": [
+								{
+									"name": "Example",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/ticket/2",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"ticket",
+												"2"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 01 Dec 2023 23:03:55 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "42"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Ticket deleted successfully\"\n}"
+								}
+							]
+						}
+					],
+					"description": "Folder ini berfungsi ketika seorang admin ingin membuat daftar tiket baru, melihat seluruh daftar tiket, melihat daftar tiket berdasrkan ID tiket yang diinginkan, memperbarui data tiket, dan menghapus data tiket yang sudah tidak digunakan."
+				},
+				{
+					"name": "Blog",
+					"item": [
+						{
+							"name": "Create Blog",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Kerusuhan DI Konser jakarta\",\r\n    \"description\": \"beberapa orang menjadi tersangka\",\r\n    \"image\": \"https/image\",\r\n    \"date\": \"2023-12-31T18:00:00Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/blog",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"blog"
+									]
+								},
+								"description": "berikut merupakan endpoint untuk membuat blog baru mengenai event atau tiket yang sedang ada pada program tersebut."
+							},
+							"response": [
+								{
+									"name": "Example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"title\": \"Kerusuhan DI Konser jakarta\",\r\n    \"description\": \"beberapa orang menjadi tersangka\",\r\n    \"image\": \"https/image\",\r\n    \"date\": \"2023-12-31T18:00:00Z\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{URL}}/blog",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"blog"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 01 Dec 2023 23:06:46 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "28"
+										}
+									],
+									"cookie": [],
+									"body": "\"Blog created successfully\""
+								}
+							]
+						},
+						{
+							"name": "Get All Blog",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/blog",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"blog"
+									]
+								},
+								"description": "berikut merupakan endpoint untuk menampilkan seluruh daftar blog yang sudah dibuat sebelumnya oleh admin."
+							},
+							"response": [
+								{
+									"name": "Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/blog",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"blog"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 01 Dec 2023 23:07:02 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "742"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"ID\": 1,\n            \"Image\": \"https/image\",\n            \"Date\": \"2023-12-02T00:00:00Z\",\n            \"Title\": \"Nama Tiket\",\n            \"Description\": \"Deskripsi Tiket\",\n            \"CreatedAt\": \"2023-12-02T04:13:07.807064Z\",\n            \"UpdatedAt\": \"2023-12-02T04:13:07.807064Z\",\n            \"DeletedAt\": \"0001-01-01T00:00:00Z\"\n        },\n        {\n            \"ID\": 2,\n            \"Image\": \"https/image\",\n            \"Date\": \"2023-12-02T00:00:00Z\",\n            \"Title\": \"Nama Tiket\",\n            \"Description\": \"Deskripsi Tiket\",\n            \"CreatedAt\": \"2023-12-02T06:05:44.914708Z\",\n            \"UpdatedAt\": \"2023-12-02T06:05:44.914708Z\",\n            \"DeletedAt\": \"0001-01-01T00:00:00Z\"\n        },\n        {\n            \"ID\": 3,\n            \"Image\": \"https/image\",\n            \"Date\": \"2023-12-02T00:00:00Z\",\n            \"Title\": \"Kerusuhan DI Konser jakarta\",\n            \"Description\": \"beberapa orang menjadi tersangka\",\n            \"CreatedAt\": \"2023-12-02T06:06:46.56004Z\",\n            \"UpdatedAt\": \"2023-12-02T06:06:46.56004Z\",\n            \"DeletedAt\": \"0001-01-01T00:00:00Z\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Blog",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Konser Tersukses\",\r\n    \"description\": \"dikatakan oleh produser menjadi konser tersukses sepanjang masa\",\r\n    \"image\": \"https/image\",\r\n    \"date\": \"2023-12-31T18:00:00Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/blog/1",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"blog",
+										"1"
+									]
+								},
+								"description": "berikut merupakan endpoint untuk memperbarui data atau daftar blog yang sudah terdaftar berdasarkan ID blog."
+							},
+							"response": [
+								{
+									"name": "Example",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"title\": \"Konser Tersukses\",\r\n    \"description\": \"dikatakan oleh produser menjadi konser tersukses sepanjang masa\",\r\n    \"image\": \"https/image\",\r\n    \"date\": \"2023-12-31T18:00:00Z\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{URL}}/blog/1",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"blog",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 01 Dec 2023 23:07:55 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "320"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Blog\": {\n        \"ID\": 1,\n        \"Image\": \"https/image\",\n        \"Date\": \"2023-12-31T18:00:00Z\",\n        \"Title\": \"Konser Tersukses\",\n        \"Description\": \"dikatakan oleh produser menjadi konser tersukses sepanjang masa\",\n        \"CreatedAt\": \"0001-01-01T00:00:00Z\",\n        \"UpdatedAt\": \"0001-01-01T00:00:00Z\",\n        \"DeletedAt\": \"0001-01-01T00:00:00Z\"\n    },\n    \"message\": \"Blog updated successfully\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete Blog",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/blog/2",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"blog",
+										"2"
+									]
+								},
+								"description": "berikut merupakan endpoint untuk menghapus salah satu daftar blog yang sudah terdaftar."
+							},
+							"response": [
+								{
+									"name": "Example",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/blog/2",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"blog",
+												"2"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 01 Dec 2023 23:08:57 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "40"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Blog deleted successfully\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Search Blog",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/blog/search/Kerusuhan",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"blog",
+										"search",
+										"Kerusuhan"
+									]
+								},
+								"description": "berikut merupakan endpoint untuk melakukan pencarian blog berdasarkan keyword."
+							},
+							"response": [
+								{
+									"name": "Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/blog/search/Kerusuhan",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"blog",
+												"search",
+												"Kerusuhan"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 01 Dec 2023 23:08:32 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "276"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"ID\": 3,\n            \"Image\": \"https/image\",\n            \"Date\": \"2023-12-02T00:00:00Z\",\n            \"Title\": \"Kerusuhan DI Konser jakarta\",\n            \"Description\": \"beberapa orang menjadi tersangka\",\n            \"CreatedAt\": \"2023-12-02T06:06:46.56004Z\",\n            \"UpdatedAt\": \"2023-12-02T06:06:46.56004Z\",\n            \"DeletedAt\": \"0001-01-01T00:00:00Z\"\n        }\n    ]\n}"
+								}
+							]
+						}
+					],
+					"description": "Folder ini berfungsi ketika admin ingin membuat data blog, mengupdate atau memperbarui data blog, menghapus data blog, dan melakukan pencarian blog, serta menampilkan data blog secara keseluruhan yang sudah berhasil dibuat atau terdaftar."
+				},
+				{
+					"name": "Order",
+					"item": [
+						{
+							"name": "Create Order",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"ticket_id\": 3,\r\n  \"quantity\": 2,\r\n  \"user_id\": 10,\r\n  \"status\": \"seleseai\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/order",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"order"
+									]
+								},
+								"description": "berikut merupakan endpoint ketika admin ingin membuat new order untuk customer yang tidak bisa order secara mandiri."
+							},
+							"response": [
+								{
+									"name": "Example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"ticket_id\": 1,\r\n  \"quantity\": 2,\r\n  \"user_id\": 5,\r\n  \"status\": \"seleseai\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{URL}}/order",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"order"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 01 Dec 2023 23:13:23 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "29"
+										}
+									],
+									"cookie": [],
+									"body": "\"Order created successfully\""
+								}
+							]
+						},
+						{
+							"name": "Get All Order",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/order",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"order"
+									]
+								},
+								"description": "berikut merupakan endpoint untuk menampilkan seluruh data order yang sudah dibuat baik oleh admin maupun pembeli."
+							},
+							"response": [
+								{
+									"name": "Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/order",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"order"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 01 Dec 2023 23:14:57 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "763"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Get all orders success\",\n    \"order_details\": [\n        {\n            \"ticket\": {\n                \"id\": 1,\n                \"image\": \"https/image\",\n                \"location\": \"bekasi\",\n                \"Date\": \"2023-12-31T00:00:00Z\",\n                \"title\": \"Dragon\",\n                \"description\": \"konser lagu edm terbaik\",\n                \"price\": 50,\n                \"Status\": \"available\",\n                \"Quota\": 198,\n                \"category\": \"music\",\n                \"Terjual\": 5\n            },\n            \"user_id\": 1\n        },\n        {\n            \"ticket\": {\n                \"id\": 1,\n                \"image\": \"https/image\",\n                \"location\": \"bekasi\",\n                \"Date\": \"2023-12-31T00:00:00Z\",\n                \"title\": \"Dragon\",\n                \"description\": \"konser lagu edm terbaik\",\n                \"price\": 50,\n                \"Status\": \"available\",\n                \"Quota\": 198,\n                \"category\": \"music\",\n                \"Terjual\": 5\n            },\n            \"user_id\": 1\n        },\n        {\n            \"ticket\": {\n                \"id\": 1,\n                \"image\": \"https/image\",\n                \"location\": \"bekasi\",\n                \"Date\": \"2023-12-31T00:00:00Z\",\n                \"title\": \"Dragon\",\n                \"description\": \"konser lagu edm terbaik\",\n                \"price\": 50,\n                \"Status\": \"available\",\n                \"Quota\": 198,\n                \"category\": \"music\",\n                \"Terjual\": 5\n            },\n            \"user_id\": 5\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Order ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/order/1",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"order",
+										"1"
+									]
+								},
+								"description": "berikut merupakan endpoint untuk menampilkan data order bersadarkan ID yang sudah terdaftar pada database order."
+							},
+							"response": [
+								{
+									"name": "Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/order/1",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"order",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 01 Dec 2023 23:15:21 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "763"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Get all orders success\",\n    \"order_details\": [\n        {\n            \"ticket\": {\n                \"id\": 1,\n                \"image\": \"https/image\",\n                \"location\": \"bekasi\",\n                \"Date\": \"2023-12-31T00:00:00Z\",\n                \"title\": \"Dragon\",\n                \"description\": \"konser lagu edm terbaik\",\n                \"price\": 50,\n                \"Status\": \"available\",\n                \"Quota\": 198,\n                \"category\": \"music\",\n                \"Terjual\": 5\n            },\n            \"user_id\": 1\n        },\n        {\n            \"ticket\": {\n                \"id\": 1,\n                \"image\": \"https/image\",\n                \"location\": \"bekasi\",\n                \"Date\": \"2023-12-31T00:00:00Z\",\n                \"title\": \"Dragon\",\n                \"description\": \"konser lagu edm terbaik\",\n                \"price\": 50,\n                \"Status\": \"available\",\n                \"Quota\": 198,\n                \"category\": \"music\",\n                \"Terjual\": 5\n            },\n            \"user_id\": 1\n        },\n        {\n            \"ticket\": {\n                \"id\": 1,\n                \"image\": \"https/image\",\n                \"location\": \"bekasi\",\n                \"Date\": \"2023-12-31T00:00:00Z\",\n                \"title\": \"Dragon\",\n                \"description\": \"konser lagu edm terbaik\",\n                \"price\": 50,\n                \"Status\": \"available\",\n                \"Quota\": 198,\n                \"category\": \"music\",\n                \"Terjual\": 5\n            },\n            \"user_id\": 5\n        }\n    ]\n}"
+								}
+							]
+						}
+					],
+					"description": "Folder ini berfungsi ketika admin ingin membuat new order, menampilkan seluruh data order, dan menampilkan data order berdasarkan ID."
+				},
+				{
+					"name": "Notification",
+					"item": [
+						{
+							"name": "Create Notification",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"type\": \"Diskon Ticket\",\r\n  \"message\": \"ada diskon loh cek berikut\",\r\n  \"is_read\": false,\r\n  \"create_at\": \"2023-11-30T12:34:56Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/notification",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"notification"
+									]
+								},
+								"description": "berikut merupakan endpoint ketika admin ingin membuat notifikasi."
+							},
+							"response": [
+								{
+									"name": "Example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"type\": \"Diskon Ticket\",\r\n  \"message\": \"ada diskon loh cek berikut\",\r\n  \"is_read\": false,\r\n  \"create_at\": \"2023-11-30T12:34:56Z\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{URL}}/notification",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"notification"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 01 Dec 2023 23:17:03 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "220"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 1,\n    \"type\": \"Diskon Ticket\",\n    \"message\": \"ada diskon loh cek berikut\",\n    \"is_read\": false,\n    \"created_at\": \"2023-12-02T06:17:03.6441118+07:00\",\n    \"updated_at\": \"2023-12-02T06:17:03.647676+07:00\",\n    \"deleted_at\": \"0001-01-01T00:00:00Z\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Notification",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/notification",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"notification"
+									]
+								},
+								"description": "berikut merupakan endpoint yang digunakan untuk nampilkan notifikasi"
+							},
+							"response": [
+								{
+									"name": "Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/notification",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"notification"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 01 Dec 2023 23:17:16 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "220"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"type\": \"Diskon Ticket\",\n            \"message\": \"ada diskon loh cek berikut\",\n            \"is_read\": false,\n            \"created_at\": \"2023-12-02T06:17:03.644111Z\",\n            \"updated_at\": \"2023-12-02T06:17:03.647676Z\",\n            \"deleted_at\": \"0001-01-01T00:00:00Z\"\n        }\n    ]\n}"
+								}
+							]
+						}
+					],
+					"description": "Folder ini berfungsi ketika admin ingin membuat suatu notifikasi yang nanti nya akan tampil di layar pembeli dan melihat notifikasi apa saja yang akan muncul."
+				},
+				{
+					"name": "Topup Saldo",
+					"item": [
+						{
+							"name": "Topup Saldo",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"topup123\",\r\n    \"user_id\": 1,\r\n    \"amount\": 10000,\r\n    \"status\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/topup",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"topup"
+									]
+								},
+								"description": "berikut merupakan endpoint untuk menambahkan saldo pada suatu akun dari sisi admin."
+							},
+							"response": [
+								{
+									"name": "Example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": \"topup123\",\r\n    \"user_id\": 1,\r\n    \"amount\": 10000,\r\n    \"status\": 0\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{URL}}/topup",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"topup"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 01 Dec 2023 23:17:59 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "415"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": \"Midtrans API is returning API error. HTTP status code: 401 API response: {\\\"status_code\\\":\\\"401\\\",\\\"status_message\\\":\\\"Unknown Merchant server_key/id\\\",\\\"id\\\":\\\"8cc092fc-f1eb-4d4e-9f03-f9b1b29c094d\\\"}: Midtrans API is returning API error. HTTP status code: 401 API response: {\\\"status_code\\\":\\\"401\\\",\\\"status_message\\\":\\\"Unknown Merchant server_key/id\\\",\\\"id\\\":\\\"8cc092fc-f1eb-4d4e-9f03-f9b1b29c094d\\\"}\"\n}"
+								}
+							]
+						},
+						{
+							"name": "History TopUP",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/transactions/history",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"transactions",
+										"history"
+									]
+								},
+								"description": "Endpoint ini digunakan untuk melakukan cek atau melihat history top up yang dilakukan oleh admin."
+							},
+							"response": [
+								{
+									"name": "History TopUP",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/transactions/history",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"transactions",
+												"history"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 05 Dec 2023 17:07:13 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "140"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"ID\": 1,\n        \"OrderID\": \"topup\",\n        \"UserID\": 1,\n        \"Amount\": 10000,\n        \"Status\": \"paid\"\n    },\n    {\n        \"ID\": 2,\n        \"OrderID\": \"topup\",\n        \"UserID\": 1,\n        \"Amount\": 50000,\n        \"Status\": \"paid\"\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "midtrans",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"order_id\": \"topup\",\r\n\t\"amount\": 50000\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/transactions",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"transactions"
+									]
+								},
+								"description": "**Endpoin ini digunakan untuk top up saldo menggunakan midtrans**\n\nMASIH BELUM PASTI"
+							},
+							"response": [
+								{
+									"name": "midtrans",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"order_id\": \"topup\",\r\n\t\"amount\": 50000\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{URL}}/transactions",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"transactions"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 05 Dec 2023 16:29:17 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "111"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"url_pembayaran\": \"https://app.sandbox.midtrans.com/snap/v3/redirection/17f57236-6ef2-4deb-a044-e4724a5c291e\"\n}"
+								}
+							]
+						}
+					],
+					"description": "Folder ini berfungsi ketika admin ingin menambahkan saldo pada akun yang saldo nya ingin ditambahkan."
+				}
+			],
+			"description": "Folder ini menyimpan API untuk fitur yang dapat diakses oleh admin. serta untuk mengakses atau menggunakan endpoint pada folder ini diharuskan memiliki token sesuai dengan role."
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Profile",
+					"item": [
+						{
+							"name": "Update Profile",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Buyer}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"email\" : \"Buyer1@gmail.com\",\r\n  \"number\": \"12345678901\",\r\n  \"password\" : \"123123123123123123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/users/profile",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"users",
+										"profile"
+									]
+								},
+								"description": "berikut merupakan endpoint untuk melakukan update profile dari sisi pembeli."
+							},
+							"response": [
+								{
+									"name": "Update Profile",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"email\" : \"Buyer1@gmail.com\",\r\n  \"number\": \"12345678901\",\r\n  \"password\" : \"123123123123123123\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{URL}}/users/profile",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"users",
+												"profile"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 21:43:48 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "39"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": \"successfully update user\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete Profile",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Buyer}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 9\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/users/deleteprofile",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"users",
+										"deleteprofile"
+									]
+								},
+								"description": "berikut merupakan endpoint untuk menghapus profile pembeli."
+							},
+							"response": [
+								{
+									"name": "Delete Profile",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": 9\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{URL}}/users/deleteprofile",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"users",
+												"deleteprofile"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 21:54:29 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "40"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"User deleted successfully\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Saldo",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Buyer}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/users/balance",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"users",
+										"balance"
+									]
+								},
+								"description": "endpoint berikut ini digunakan untuk melihat saldi yang dimiliki oleh pembeli."
+							},
+							"response": [
+								{
+									"name": "Get Saldo",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/users/balance",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"users",
+												"balance"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 21:49:43 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "7"
+										}
+									],
+									"cookie": [],
+									"body": "100000"
+								}
+							]
+						},
+						{
+							"name": "Get Profile",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Buyer}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/users/profile",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"users",
+										"profile"
+									]
+								},
+								"description": "endpoint berikut ini digunakan untuk melihat profile"
+							},
+							"response": [
+								{
+									"name": "Get Profile",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/users/profile",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"users",
+												"profile"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 21:36:00 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "191"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 9,\n    \"name\": \"\",\n    \"email\": \"Buyer1@gmail.com\",\n    \"number\": \"00000000000\",\n    \"roles\": \"Buyer\",\n    \"saldo\": 0,\n    \"created_at\": \"2023-12-03T01:29:58.477828+07:00\",\n    \"updated_at\": \"2023-12-03T01:29:58.477828+07:00\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Logout",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Buyer}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/user/logout",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"user",
+										"logout"
+									]
+								},
+								"description": "endpoint diatas digunakan untuk melakukan logout akun."
+							},
+							"response": [
+								{
+									"name": "Logout",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/user/logout",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"user",
+												"logout"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 04 Dec 2023 20:08:02 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "38"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": \"successfully logged out\"\n}"
+								}
+							]
+						}
+					],
+					"description": "Folder ini berfungsi ketika pembeli ingin melakukan update, delete, melihat saldo, dan melihat profile mereka."
+				},
+				{
+					"name": "Ticket",
+					"item": [
+						{
+							"name": "Get Ticket",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/ticket",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"ticket"
+									]
+								},
+								"description": "endpoint diatas digunakan untuk melihat tiket secara keseluruhan tanpa adanya penyortiran."
+							},
+							"response": [
+								{
+									"name": "Get Ticket",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/ticket",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"ticket"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 22:35:09 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "432"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"image\": \"https/image\",\n            \"location\": \"GBK\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"coldplay\",\n            \"description\": \"penyanyi luar negri\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 100,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        },\n        {\n            \"id\": 1,\n            \"image\": \"https/image\",\n            \"location\": \"bekasi\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"Dragon\",\n            \"description\": \"konser lagu edm terbaik\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 198,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Ticket ID",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/ticket/1",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"ticket",
+										"1"
+									]
+								},
+								"description": "endpoint ini berfungsi untuk melihat tiket berdasarkan ID"
+							},
+							"response": [
+								{
+									"name": "Get Ticket ID",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/ticket/1",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"ticket",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 22:35:20 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "229"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"category\": \"music\",\n        \"created\": \"2023-12-01T22:20:09.060639Z\",\n        \"date\": \"2023-12-31T00:00:00Z\",\n        \"description\": \"konser lagu edm terbaik\",\n        \"id\": 1,\n        \"image\": \"https/image\",\n        \"location\": \"bekasi\",\n        \"price\": 50,\n        \"quota\": 198,\n        \"title\": \"Dragon\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Search",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/ticket/search/Nama",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"ticket",
+										"search",
+										"Nama"
+									]
+								},
+								"description": "endpoing ini digunakan ketika pembeli ingin melakukan pecarian di button search."
+							},
+							"response": [
+								{
+									"name": "Search",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/ticket/search/cold",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"ticket",
+												"search",
+												"cold"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 22:35:42 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "219"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"image\": \"https/image\",\n            \"location\": \"GBK\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"coldplay\",\n            \"description\": \"penyanyi luar negri\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 100,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "FIlter Location",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/ticket/location/GBK",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"ticket",
+										"location",
+										"GBK"
+									]
+								},
+								"description": "endpoint ini berfungsi untuk menampilkan data tiket atau event yang sedang berlangsung berdasarkan lokasi."
+							},
+							"response": [
+								{
+									"name": "FIlter Location",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/ticket/location/GBK",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"ticket",
+												"location",
+												"GBK"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 22:35:58 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "219"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"image\": \"https/image\",\n            \"location\": \"GBK\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"coldplay\",\n            \"description\": \"penyanyi luar negri\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 100,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Filter Category",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/ticket/category/music",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"ticket",
+										"category",
+										"music"
+									]
+								},
+								"description": "endpoint diatas gunakan untuk menampikan data tiket berdasarkan category tiket yang tersedia."
+							},
+							"response": [
+								{
+									"name": "Filter Category",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/ticket/category/music",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"ticket",
+												"category",
+												"music"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 22:36:07 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "432"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"image\": \"https/image\",\n            \"location\": \"GBK\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"coldplay\",\n            \"description\": \"penyanyi luar negri\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 100,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        },\n        {\n            \"id\": 1,\n            \"image\": \"https/image\",\n            \"location\": \"bekasi\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"Dragon\",\n            \"description\": \"konser lagu edm terbaik\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 198,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Filter Time",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/ticket/range/:start/:end",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"ticket",
+										"range",
+										":start",
+										":end"
+									],
+									"variable": [
+										{
+											"key": "start",
+											"value": "2023-12-31"
+										},
+										{
+											"key": "end",
+											"value": "2024-12-31"
+										}
+									]
+								},
+								"description": "endpoint ini berfungsi untuk menampilkan data tiket yang tersedia berdasarka waktu."
+							},
+							"response": [
+								{
+									"name": "Filter Time",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/ticket/range/:start/:end",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"ticket",
+												"range",
+												":start",
+												":end"
+											],
+											"variable": [
+												{
+													"key": "start",
+													"value": "2023-12-31"
+												},
+												{
+													"key": "end",
+													"value": "2024-12-31"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 22:36:50 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "432"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"image\": \"https/image\",\n            \"location\": \"GBK\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"coldplay\",\n            \"description\": \"penyanyi luar negri\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 100,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        },\n        {\n            \"id\": 1,\n            \"image\": \"https/image\",\n            \"location\": \"bekasi\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"Dragon\",\n            \"description\": \"konser lagu edm terbaik\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 198,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Filter Price",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/ticket/price/:min/:max",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"ticket",
+										"price",
+										":min",
+										":max"
+									],
+									"variable": [
+										{
+											"key": "min",
+											"value": "0"
+										},
+										{
+											"key": "max",
+											"value": "100"
+										}
+									]
+								},
+								"description": "endpoint ini berfungsi untuk menampilkan range harga tiket yang tersedia."
+							},
+							"response": [
+								{
+									"name": "Filter Price",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/ticket/price/:min/:max",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"ticket",
+												"price",
+												":min",
+												":max"
+											],
+											"variable": [
+												{
+													"key": "min",
+													"value": "0"
+												},
+												{
+													"key": "max",
+													"value": "100"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 22:37:03 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "432"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"image\": \"https/image\",\n            \"location\": \"GBK\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"coldplay\",\n            \"description\": \"penyanyi luar negri\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 100,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        },\n        {\n            \"id\": 1,\n            \"image\": \"https/image\",\n            \"location\": \"bekasi\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"Dragon\",\n            \"description\": \"konser lagu edm terbaik\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 198,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Sort Cheap",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/ticket/cheapest?sort=termurah",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"ticket",
+										"cheapest"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "termurah"
+										}
+									]
+								},
+								"description": "endpoint ini berfungsi untuk menampilkan data tiket mulai dari yang termurah."
+							},
+							"response": [
+								{
+									"name": "Sort Cheap",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/ticket/cheapest?sort=termurah",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"ticket",
+												"cheapest"
+											],
+											"query": [
+												{
+													"key": "sort",
+													"value": "termurah"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 22:37:14 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "432"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"image\": \"https/image\",\n            \"location\": \"GBK\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"coldplay\",\n            \"description\": \"penyanyi luar negri\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 100,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        },\n        {\n            \"id\": 1,\n            \"image\": \"https/image\",\n            \"location\": \"bekasi\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"Dragon\",\n            \"description\": \"konser lagu edm terbaik\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 198,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Sort Bestseller",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/ticket/most-bought?sort=terbanyak",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"ticket",
+										"most-bought"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "terbanyak"
+										}
+									]
+								},
+								"description": "endpoint ini berfungsi untuk menampilkan data tiket dengan pembeli terbanyak atau terfavorit."
+							},
+							"response": [
+								{
+									"name": "Sort Bestseller",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/ticket/most-bought?sort=terbanyak",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"ticket",
+												"most-bought"
+											],
+											"query": [
+												{
+													"key": "sort",
+													"value": "terbanyak"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 22:37:21 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "432"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"image\": \"https/image\",\n            \"location\": \"GBK\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"coldplay\",\n            \"description\": \"penyanyi luar negri\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 100,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        },\n        {\n            \"id\": 1,\n            \"image\": \"https/image\",\n            \"location\": \"bekasi\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"Dragon\",\n            \"description\": \"konser lagu edm terbaik\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 198,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Sort Expenive",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/ticket/most-expensive?sort=termahal",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"ticket",
+										"most-expensive"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "termahal"
+										}
+									]
+								},
+								"description": "endpoint ini berfungsi untuk melihat daftar tiket dengan harga termahal."
+							},
+							"response": [
+								{
+									"name": "Sort Expenive",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/ticket/most-expensive?sort=termahal",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"ticket",
+												"most-expensive"
+											],
+											"query": [
+												{
+													"key": "sort",
+													"value": "termahal"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 22:37:27 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "432"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"image\": \"https/image\",\n            \"location\": \"GBK\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"coldplay\",\n            \"description\": \"penyanyi luar negri\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 100,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        },\n        {\n            \"id\": 1,\n            \"image\": \"https/image\",\n            \"location\": \"bekasi\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"Dragon\",\n            \"description\": \"konser lagu edm terbaik\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 198,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Sort Lastest",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/ticket/terbaru?sort=terbaru",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"ticket",
+										"terbaru"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "terbaru"
+										}
+									]
+								},
+								"description": "endpoint diatas digunakan untuk menampilkan data tiket yang paling baru atau terbaru."
+							},
+							"response": [
+								{
+									"name": "Sort Lastest",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/ticket/terbaru?sort=terbaru",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"ticket",
+												"terbaru"
+											],
+											"query": [
+												{
+													"key": "sort",
+													"value": "terbaru"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 22:37:49 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "432"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"image\": \"https/image\",\n            \"location\": \"GBK\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"coldplay\",\n            \"description\": \"penyanyi luar negri\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 100,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        },\n        {\n            \"id\": 1,\n            \"image\": \"https/image\",\n            \"location\": \"bekasi\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"Dragon\",\n            \"description\": \"konser lagu edm terbaik\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 198,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Sort Avaliable",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/ticket/available?sort=tersedia",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"ticket",
+										"available"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "tersedia"
+										}
+									]
+								},
+								"description": "endpoint ini berfungsi untuk menampilkan data tiket yang masih tersedia."
+							},
+							"response": [
+								{
+									"name": "Sort Avaliable",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/ticket/available?sort=tersedia",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"ticket",
+												"available"
+											],
+											"query": [
+												{
+													"key": "sort",
+													"value": "tersedia"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 22:38:00 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "432"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"image\": \"https/image\",\n            \"location\": \"GBK\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"coldplay\",\n            \"description\": \"penyanyi luar negri\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 100,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        },\n        {\n            \"id\": 1,\n            \"image\": \"https/image\",\n            \"location\": \"bekasi\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"Dragon\",\n            \"description\": \"konser lagu edm terbaik\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 198,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        }\n    ]\n}"
+								}
+							]
+						}
+					],
+					"description": "Folder ini berfungsi ketika pembeli ingin melihat daftar tiket secara keseluruhan, berdasarkan filter dan sortir mulai dari berdasarkan lokasi, kategori, waktu, harga, terfavorit, termurah, termahal, tersedia, dsb."
+				},
+				{
+					"name": "Blog",
+					"item": [
+						{
+							"name": "Get All Blog",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/blog",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"blog"
+									]
+								},
+								"description": "endpoin ini berfungsi untuk menampikan seluruh blog yang tersedia pada aplikasi ini."
+							},
+							"response": [
+								{
+									"name": "Get All Blog",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/blog",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"blog"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 22:38:18 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "563"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"ID\": 3,\n            \"Image\": \"https/image\",\n            \"Date\": \"2023-12-02T00:00:00Z\",\n            \"Title\": \"Kerusuhan DI Konser jakarta\",\n            \"Description\": \"beberapa orang menjadi tersangka\",\n            \"CreatedAt\": \"2023-12-02T06:06:46.56004Z\",\n            \"UpdatedAt\": \"2023-12-02T06:06:46.56004Z\",\n            \"DeletedAt\": \"0001-01-01T00:00:00Z\"\n        },\n        {\n            \"ID\": 1,\n            \"Image\": \"https/image\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"Title\": \"Konser Tersukses\",\n            \"Description\": \"dikatakan oleh produser menjadi konser tersukses sepanjang masa\",\n            \"CreatedAt\": \"2023-12-02T04:13:07.807064Z\",\n            \"UpdatedAt\": \"2023-12-02T06:07:55.103818Z\",\n            \"DeletedAt\": \"0001-01-01T00:00:00Z\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Blog By ID",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/blog/1",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"blog",
+										"1"
+									]
+								},
+								"description": "endpoint ini berfungsi untuk melihat blog berdasarkan ID"
+							},
+							"response": [
+								{
+									"name": "Get Blog By ID",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/blog/1",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"blog",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 22:38:35 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "217"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"created\": \"2023-12-02T04:13:07.807064Z\",\n        \"date\": \"2023-12-31T00:00:00Z\",\n        \"description\": \"dikatakan oleh produser menjadi konser tersukses sepanjang masa\",\n        \"id\": 1,\n        \"image\": \"https/image\",\n        \"title\": \"Konser Tersukses\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Search Blog",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/blog/search/Kons",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"blog",
+										"search",
+										"Kons"
+									]
+								},
+								"description": "endpoint ini berfungsi ketika pembeli ingin melakukan pencarian pada button search menggunkan sebuah keyword."
+							},
+							"response": [
+								{
+									"name": "Search Blog",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/blog/search/Kons",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"blog",
+												"search",
+												"Kons"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 22:39:08 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "563"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"ID\": 3,\n            \"Image\": \"https/image\",\n            \"Date\": \"2023-12-02T00:00:00Z\",\n            \"Title\": \"Kerusuhan DI Konser jakarta\",\n            \"Description\": \"beberapa orang menjadi tersangka\",\n            \"CreatedAt\": \"2023-12-02T06:06:46.56004Z\",\n            \"UpdatedAt\": \"2023-12-02T06:06:46.56004Z\",\n            \"DeletedAt\": \"0001-01-01T00:00:00Z\"\n        },\n        {\n            \"ID\": 1,\n            \"Image\": \"https/image\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"Title\": \"Konser Tersukses\",\n            \"Description\": \"dikatakan oleh produser menjadi konser tersukses sepanjang masa\",\n            \"CreatedAt\": \"2023-12-02T04:13:07.807064Z\",\n            \"UpdatedAt\": \"2023-12-02T06:07:55.103818Z\",\n            \"DeletedAt\": \"0001-01-01T00:00:00Z\"\n        }\n    ]\n}"
+								}
+							]
+						}
+					],
+					"description": "Folder ini digunakan ketika pembeli ingin melihat blog atau mencari blog berdasarkan keyword."
+				},
+				{
+					"name": "Order",
+					"item": [
+						{
+							"name": "Create Order",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Buyer}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"ticket_id\": 1,\r\n  \"quantity\": 2,\r\n  \"status\": \"seleseai\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}user/order",
+									"host": [
+										"{{URL}}user"
+									],
+									"path": [
+										"order"
+									]
+								},
+								"description": "endpoint ini berfungsi untuk membuat new order oleh pembeli."
+							},
+							"response": [
+								{
+									"name": "Create Order",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"ticket_id\": 1,\r\n  \"quantity\": 2,\r\n  \"status\": \"seleseai\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{URL}}user/order",
+											"host": [
+												"{{URL}}user"
+											],
+											"path": [
+												"order"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 03 Dec 2023 19:48:47 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "29"
+										}
+									],
+									"cookie": [],
+									"body": "\"Order created successfully\""
+								}
+							]
+						},
+						{
+							"name": "Get History Order",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Buyer}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}user/order",
+									"host": [
+										"{{URL}}user"
+									],
+									"path": [
+										"order"
+									]
+								},
+								"description": "endpoint ini berfungsi untuk melihat history order yang sudah pernah dilakukan."
+							},
+							"response": [
+								{
+									"name": "Get History Order",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}user/order",
+											"host": [
+												"{{URL}}user"
+											],
+											"path": [
+												"order"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 03 Dec 2023 19:48:32 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "529"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Get all orders success\",\n    \"order_details\": [\n        {\n            \"ticket\": {\n                \"id\": 1,\n                \"image\": \"https/image\",\n                \"location\": \"bekasi\",\n                \"Date\": \"2023-12-31T00:00:00Z\",\n                \"title\": \"Dragon\",\n                \"description\": \"konser lagu edm terbaik\",\n                \"price\": 50,\n                \"Status\": \"available\",\n                \"Quota\": 194,\n                \"category\": \"music\",\n                \"Terjual\": 5\n            },\n            \"user_id\": 10\n        },\n        {\n            \"ticket\": {\n                \"id\": 1,\n                \"image\": \"https/image\",\n                \"location\": \"bekasi\",\n                \"Date\": \"2023-12-31T00:00:00Z\",\n                \"title\": \"Dragon\",\n                \"description\": \"konser lagu edm terbaik\",\n                \"price\": 50,\n                \"Status\": \"available\",\n                \"Quota\": 194,\n                \"category\": \"music\",\n                \"Terjual\": 5\n            },\n            \"user_id\": 10\n        }\n    ]\n}"
+								}
+							]
+						}
+					],
+					"description": "Folder ini berfungsi ketika pembeli membuat new order, dan melihat history order"
+				},
+				{
+					"name": "Notification",
+					"item": [
+						{
+							"name": "User Get Notification",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Buyer}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}user/notification",
+									"host": [
+										"{{URL}}user"
+									],
+									"path": [
+										"notification"
+									]
+								},
+								"description": "endpoint ini berfungsi untuk menampilkan notifikasi."
+							},
+							"response": [
+								{
+									"name": "User Get Notification",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}user/notification",
+											"host": [
+												"{{URL}}user"
+											],
+											"path": [
+												"notification"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 03 Dec 2023 19:57:58 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "220"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"type\": \"Diskon Ticket\",\n            \"message\": \"ada diskon loh cek berikut\",\n            \"is_read\": false,\n            \"created_at\": \"2023-12-02T06:17:03.644111Z\",\n            \"updated_at\": \"2023-12-04T02:57:43.787024Z\",\n            \"deleted_at\": \"0001-01-01T00:00:00Z\"\n        }\n    ]\n}"
+								}
+							]
+						}
+					],
+					"description": "Folder ini digunakan ketika untuk menampilkan notifikasi dilayar pembeli."
+				},
+				{
+					"name": "Topup Saldo",
+					"item": [
+						{
+							"name": "Manual Topup",
+							"item": [
+								{
+									"name": "Topup Saldo",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Token-Buyer}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": \"topup123\",\r\n    \"user_id\": 1,\r\n    \"amount\": 10000,\r\n    \"status\": 0\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/topup",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"topup"
+											]
+										},
+										"description": "endpoin ini digunakan ketika pembeli ingin melakukan top up saldo."
+									},
+									"response": []
+								},
+								{
+									"name": "User Topup",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Token-Buyer}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"amount\": 1000 \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{URL}}/user/topup",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"user",
+												"topup"
+											]
+										},
+										"description": "ini untuk topup manual tidak menggunakan midtrans jadi si user bisa menambahkan saldo menggunakan jwt untuk mendeketsi id nya kemudian menambahkan saldo nya"
+									},
+									"response": []
+								},
+								{
+									"name": "Topup Saldo",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Token-Buyer}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"saldo\" : 1000\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{URL}}/user/upgrade",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"user",
+												"upgrade"
+											]
+										},
+										"description": "endpoint ini berfungsi untuk melakukan upgrade pada saldo yang dimiliki oleh pembeli."
+									},
+									"response": [
+										{
+											"name": "topup sederhana",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"saldo\" : 1000\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{URL}}/user/upgrade",
+													"host": [
+														"{{URL}}"
+													],
+													"path": [
+														"user",
+														"upgrade"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=UTF-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Origin"
+												},
+												{
+													"key": "Date",
+													"value": "Mon, 04 Dec 2023 19:50:33 GMT"
+												},
+												{
+													"key": "Content-Length",
+													"value": "46"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"success\": \"successfully updated user saldo\"\n}"
+										}
+									]
+								}
+							],
+							"description": "Folder untuk top up dari sisi user atau pembeli tanpa menggunakan midtrans."
+						},
+						{
+							"name": "Cek Saldo",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Buyer}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/users/balance",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"users",
+										"balance"
+									]
+								},
+								"description": "endpoint ini berfungsi untuk melihat jumlah saldo yang dimiliki."
+							},
+							"response": [
+								{
+									"name": "Get Saldo",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/users/balance",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"users",
+												"balance"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 21:49:43 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "7"
+										}
+									],
+									"cookie": [],
+									"body": "100000"
+								}
+							]
+						},
+						{
+							"name": "midtrans",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Buyer}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"order_id\": \"topup\",\r\n\t\"amount\": 50000\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/transactions",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"transactions"
+									]
+								},
+								"description": "endpoint topup menggunakan midtrans"
+							},
+							"response": [
+								{
+									"name": "midtrans",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"order_id\": \"topup\",\r\n\t\"amount\": 50000\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{URL}}/transactions",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"transactions"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 05 Dec 2023 16:29:17 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "111"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"url_pembayaran\": \"https://app.sandbox.midtrans.com/snap/v3/redirection/17f57236-6ef2-4deb-a044-e4724a5c291e\"\n}"
+								}
+							]
+						},
+						{
+							"name": "History TopUP",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Buyer}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/transactions/history",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"transactions",
+										"history"
+									]
+								},
+								"description": "Endpoint ini berfungsi untuk melihat history top up menggunakan midtrans."
+							},
+							"response": [
+								{
+									"name": "History TopUP",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/transactions/history",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"transactions",
+												"history"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 05 Dec 2023 17:07:13 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "140"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"ID\": 1,\n        \"OrderID\": \"topup\",\n        \"UserID\": 1,\n        \"Amount\": 10000,\n        \"Status\": \"paid\"\n    },\n    {\n        \"ID\": 2,\n        \"OrderID\": \"topup\",\n        \"UserID\": 1,\n        \"Amount\": 50000,\n        \"Status\": \"paid\"\n    }\n]"
+								}
+							]
+						}
+					],
+					"description": "Folder ini digunakan ketika pembeli ingin melakukan top up, cek saldo, dsb."
+				}
+			],
+			"description": "Folder ini menyimpan API untuk fitur yang dapat diakses oleh pembeli. serta untuk mengakses atau menggunakan endpoint pada folder ini diharuskan memiliki token sesuai dengan role sebagai buyer/pembeli."
+		},
+		{
+			"name": "Public",
+			"item": [
+				{
+					"name": "Ticket",
+					"item": [
+						{
+							"name": "Search Ticket",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/ticket/search/col",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"ticket",
+										"search",
+										"col"
+									]
+								},
+								"description": "endpoint ini digunakan untuk melakukan pencarian pada button search menggunakan suaty keyword."
+							},
+							"response": [
+								{
+									"name": "Search Ticket",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/ticket/search/col",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"ticket",
+												"search",
+												"col"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 22:52:52 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "219"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"image\": \"https/image\",\n            \"location\": \"GBK\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"coldplay\",\n            \"description\": \"penyanyi luar negri\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 100,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Filter Location",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/ticket/location/GBK",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"ticket",
+										"location",
+										"GBK"
+									]
+								},
+								"description": "endpoint ini untuk menampilkan data berdaskan lokasi event."
+							},
+							"response": [
+								{
+									"name": "Filter Location",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/ticket/location/GBK",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"ticket",
+												"location",
+												"GBK"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 22:53:09 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "219"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"image\": \"https/image\",\n            \"location\": \"GBK\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"coldplay\",\n            \"description\": \"penyanyi luar negri\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 100,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Fileter Category",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/ticket/category/music",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"ticket",
+										"category",
+										"music"
+									]
+								},
+								"description": "endpoint ini berfungsi untuk menampilkan data berdasarkan kategori tiket atau event."
+							},
+							"response": [
+								{
+									"name": "Fileter Category",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/ticket/category/music",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"ticket",
+												"category",
+												"music"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 22:53:26 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "432"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"image\": \"https/image\",\n            \"location\": \"GBK\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"coldplay\",\n            \"description\": \"penyanyi luar negri\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 100,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        },\n        {\n            \"id\": 1,\n            \"image\": \"https/image\",\n            \"location\": \"bekasi\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"Dragon\",\n            \"description\": \"konser lagu edm terbaik\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 198,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Filter Time",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/ticket/range/:start/:end",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"ticket",
+										"range",
+										":start",
+										":end"
+									],
+									"variable": [
+										{
+											"key": "start",
+											"value": "2023-12-31"
+										},
+										{
+											"key": "end",
+											"value": "2024-12-31"
+										}
+									]
+								},
+								"description": "endpoint ini berfungsi untuk menampilkan seluruh data tiket atau event berdasarkan waktu."
+							},
+							"response": [
+								{
+									"name": "Filter Time",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/ticket/range/:start/:end",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"ticket",
+												"range",
+												":start",
+												":end"
+											],
+											"variable": [
+												{
+													"key": "start",
+													"value": "2023-12-31"
+												},
+												{
+													"key": "end",
+													"value": "2024-12-31"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 22:54:03 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "432"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"image\": \"https/image\",\n            \"location\": \"GBK\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"coldplay\",\n            \"description\": \"penyanyi luar negri\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 100,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        },\n        {\n            \"id\": 1,\n            \"image\": \"https/image\",\n            \"location\": \"bekasi\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"Dragon\",\n            \"description\": \"konser lagu edm terbaik\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 198,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Filter Price",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/ticket/price/:min/:max",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"ticket",
+										"price",
+										":min",
+										":max"
+									],
+									"variable": [
+										{
+											"key": "min",
+											"value": "0"
+										},
+										{
+											"key": "max",
+											"value": "100"
+										}
+									]
+								},
+								"description": "endpoint ini berfungsi untuk menampilkan data tiket berdasarkan range harga yang tersedia."
+							},
+							"response": [
+								{
+									"name": "Filter Price",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/ticket/price/:min/:max",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"ticket",
+												"price",
+												":min",
+												":max"
+											],
+											"variable": [
+												{
+													"key": "min",
+													"value": "0"
+												},
+												{
+													"key": "max",
+													"value": "100"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 22:54:20 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "432"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"image\": \"https/image\",\n            \"location\": \"GBK\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"coldplay\",\n            \"description\": \"penyanyi luar negri\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 100,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        },\n        {\n            \"id\": 1,\n            \"image\": \"https/image\",\n            \"location\": \"bekasi\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"Dragon\",\n            \"description\": \"konser lagu edm terbaik\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 198,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Sort Cheap",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/ticket/cheapest?sort=termurah",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"ticket",
+										"cheapest"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "termurah"
+										}
+									]
+								},
+								"description": "endpoint ini berfungsi untuk menampilkan data tiket berdasarkan harga termurah."
+							},
+							"response": [
+								{
+									"name": "Sort Cheap",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/ticket/cheapest?sort=termurah",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"ticket",
+												"cheapest"
+											],
+											"query": [
+												{
+													"key": "sort",
+													"value": "termurah"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 22:54:34 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "432"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"image\": \"https/image\",\n            \"location\": \"GBK\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"coldplay\",\n            \"description\": \"penyanyi luar negri\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 100,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        },\n        {\n            \"id\": 1,\n            \"image\": \"https/image\",\n            \"location\": \"bekasi\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"Dragon\",\n            \"description\": \"konser lagu edm terbaik\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 198,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Sort Bestseller",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/ticket/most-bought?sort=terbanyak",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"ticket",
+										"most-bought"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "terbanyak"
+										}
+									]
+								},
+								"description": "endpoint ini berfungsi untuk menampikan data tiket berdasarkan terfavorit atau terbnyak di beli."
+							},
+							"response": [
+								{
+									"name": "Sort Bestseller",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/ticket/most-bought?sort=terbanyak",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"ticket",
+												"most-bought"
+											],
+											"query": [
+												{
+													"key": "sort",
+													"value": "terbanyak"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 22:54:47 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "432"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"image\": \"https/image\",\n            \"location\": \"GBK\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"coldplay\",\n            \"description\": \"penyanyi luar negri\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 100,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        },\n        {\n            \"id\": 1,\n            \"image\": \"https/image\",\n            \"location\": \"bekasi\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"Dragon\",\n            \"description\": \"konser lagu edm terbaik\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 198,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Sort Expensive",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/ticket/most-expensive?sort=termahal",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"ticket",
+										"most-expensive"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "termahal"
+										}
+									]
+								},
+								"description": "endpoint ini berfungsi untuk menampikan data tiket berdasarkan harga termahal."
+							},
+							"response": [
+								{
+									"name": "Sort Expensive",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/ticket/most-expensive?sort=termahal",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"ticket",
+												"most-expensive"
+											],
+											"query": [
+												{
+													"key": "sort",
+													"value": "termahal"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 22:55:02 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "432"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"image\": \"https/image\",\n            \"location\": \"GBK\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"coldplay\",\n            \"description\": \"penyanyi luar negri\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 100,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        },\n        {\n            \"id\": 1,\n            \"image\": \"https/image\",\n            \"location\": \"bekasi\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"Dragon\",\n            \"description\": \"konser lagu edm terbaik\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 198,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Sort Latest",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/ticket/terbaru?sort=terbaru",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"ticket",
+										"terbaru"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "terbaru"
+										}
+									]
+								},
+								"description": "endpoint ini berfungsi untuk menampikan data tiket berdasarkan terbaru"
+							},
+							"response": [
+								{
+									"name": "Sort Latest",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/ticket/terbaru?sort=terbaru",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"ticket",
+												"terbaru"
+											],
+											"query": [
+												{
+													"key": "sort",
+													"value": "terbaru"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 22:55:15 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "432"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"image\": \"https/image\",\n            \"location\": \"GBK\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"coldplay\",\n            \"description\": \"penyanyi luar negri\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 100,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        },\n        {\n            \"id\": 1,\n            \"image\": \"https/image\",\n            \"location\": \"bekasi\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"Dragon\",\n            \"description\": \"konser lagu edm terbaik\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 198,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Sort Available",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/ticket/available?sort=tersedia",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"ticket",
+										"available"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "tersedia"
+										}
+									]
+								},
+								"description": "endpoint ini berfungsi untuk menampikan data tiket yang masih tersedia."
+							},
+							"response": [
+								{
+									"name": "Sort Available",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/ticket/available?sort=tersedia",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"ticket",
+												"available"
+											],
+											"query": [
+												{
+													"key": "sort",
+													"value": "tersedia"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 22:55:31 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "432"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"image\": \"https/image\",\n            \"location\": \"GBK\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"coldplay\",\n            \"description\": \"penyanyi luar negri\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 100,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        },\n        {\n            \"id\": 1,\n            \"image\": \"https/image\",\n            \"location\": \"bekasi\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"Dragon\",\n            \"description\": \"konser lagu edm terbaik\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 198,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        }\n    ]\n}"
+								}
+							]
+						}
+					],
+					"description": "Folder ini berisikan endpoint yang dapat digunakan untuk melakukan search, filter, dan sortir,"
+				},
+				{
+					"name": "Blog",
+					"item": [
+						{
+							"name": "Search Blog",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/blog/search/Ker",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"blog",
+										"search",
+										"Ker"
+									]
+								},
+								"description": "endpoint untuk melakukan pencarian di button search berdasarkan keyword."
+							},
+							"response": [
+								{
+									"name": "Search Blog",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/blog/search/Ker",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"blog",
+												"search",
+												"Ker"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 22:56:35 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "276"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"ID\": 3,\n            \"Image\": \"https/image\",\n            \"Date\": \"2023-12-02T00:00:00Z\",\n            \"Title\": \"Kerusuhan DI Konser jakarta\",\n            \"Description\": \"beberapa orang menjadi tersangka\",\n            \"CreatedAt\": \"2023-12-02T06:06:46.56004Z\",\n            \"UpdatedAt\": \"2023-12-02T06:06:46.56004Z\",\n            \"DeletedAt\": \"0001-01-01T00:00:00Z\"\n        }\n    ]\n}"
+								}
+							]
+						}
+					],
+					"description": "Folder ini berfungsi untuk menyimpan endpoint get atau menampilkan data mengenai blog yang ada pada aplikasi tersebut."
+				},
+				{
+					"name": "Admin_Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"Admin@gmail.com\",\r\n    \"password\" : \"123123123123123123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						},
+						"description": "endpoint ini digunakan admin untuk melakukan login atau sign in."
+					},
+					"response": [
+						{
+							"name": "Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" : \"Admin@gmail.com\",\r\n    \"password\" : \"123123123123123123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/login",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Dec 2023 21:00:34 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "203"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IiIsImVtYWlsIjoiQWRtaW5AZ21haWwuY29tIiwicm9sZSI6IkFkbWluIiwiZXhwIjoxNzAxNDY1MDM0fQ.vnFmFEyiIVKQRYM8f3hv38hWM9CXbDq_2PUe4Kfsvw8\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Admin_Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Admin\",\r\n    \"email\" : \"Admin@gmail.com\",\r\n    \"roles\" : \"Admin\",\r\n    \"number\" : \"00000000000\",\r\n    \"password\" : \"123123123123123123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/register",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"register"
+							]
+						},
+						"description": "endpoint ini digunakan untuk melakukan register atau sign up oleh admin."
+					},
+					"response": [
+						{
+							"name": "Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"Admin\",\r\n    \"email\" : \"Admin@gmail.com\",\r\n    \"roles\" : \"Admin\",\r\n    \"number\" : \"00000000000\",\r\n    \"password\" : \"123123123123123123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/register",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Dec 2023 21:00:08 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "246"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywibmFtZSI6IiIsImVtYWlsIjoiQWRtaW5AZ21haWwuY29tIiwicm9sZSI6IkFkbWluIiwiZXhwIjoxNzAxNDY1MDA4fQ.lXziH4jyjrRA4kVv6URMIVRNJRvmQCQ0yxR7j-2sOuk\",\n    \"message\": \"User registration successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Buyer_Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Buyer\",\r\n  \"email\": \"Buyer1@gmail.com\",\r\n  \"number\": \"12345678901\",\r\n  \"password\": \"123123123123123123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/register",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"register"
+							]
+						},
+						"description": "endpoint ini digunakan untuk melakukan register atau sign up oleh oleh pembeli"
+					},
+					"response": [
+						{
+							"name": "Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"Buyer\",\r\n    \"email\" : \"Buyer@gmail.com\",\r\n    \"roles\" : \"Buyer\",\r\n    \"number\" : \"00000000000\",\r\n    \"password\" : \"123123123123123123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/register",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Dec 2023 21:00:49 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "246"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwibmFtZSI6IiIsImVtYWlsIjoiQnV5ZXJAZ21haWwuY29tIiwicm9sZSI6IkJ1eWVyIiwiZXhwIjoxNzAxNDY1MDQ5fQ.JDFd9WwL6kkwY5N8gkVjFCRQiRguwknrjHOW1EkD24E\",\n    \"message\": \"User registration successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Buyer_Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"Buyer1@gmail.com\",\r\n    \"password\" : \"123123123123123123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"login"
+							]
+						},
+						"description": "endpoint ini digunakan untuk melakukan login atau sign in oleh pembeli."
+					},
+					"response": [
+						{
+							"name": "Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" : \"Buyer@gmail.com\",\r\n    \"password\" : \"123123123123123123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/login",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Dec 2023 21:01:09 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "203"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwibmFtZSI6IiIsImVtYWlsIjoiQnV5ZXJAZ21haWwuY29tIiwicm9sZSI6IkJ1eWVyIiwiZXhwIjoxNzAxNDY1MDY5fQ.snjN9_7b9EnViKmDNyDAw5oO4290DLCAF1IowwOXOaA\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Blog",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/public/blog",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"public",
+								"blog"
+							]
+						},
+						"description": "endpoint ini digunakn untuk menampilkan seluruh blog yang tersedia pada bagian homepage"
+					},
+					"response": [
+						{
+							"name": "Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/public/blog",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"public",
+										"blog"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Dec 2023 21:18:24 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "244"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"ID\": 1,\n            \"Image\": \"https/image\",\n            \"Date\": \"2023-12-02T00:00:00Z\",\n            \"Title\": \"Nama Tiket\",\n            \"Description\": \"Deskripsi Tiket\",\n            \"CreatedAt\": \"2023-12-02T04:13:07.807064Z\",\n            \"UpdatedAt\": \"2023-12-02T04:13:07.807064Z\",\n            \"DeletedAt\": \"0001-01-01T00:00:00Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Ticket",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/public/ticket",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"public",
+								"ticket"
+							]
+						},
+						"description": "endpoint ini digunakan untuk menampilkan seluruh data tiket pada bagian homepage."
+					},
+					"response": [
+						{
+							"name": "Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/public/ticket",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"public",
+										"ticket"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Dec 2023 21:18:03 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "428"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"image\": \"https/image\",\n            \"location\": \"GBK\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"coldplay3\",\n            \"description\": \"penyanyi luar negri\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 96,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        },\n        {\n            \"id\": 2,\n            \"image\": \"https/image\",\n            \"location\": \"GBK\",\n            \"Date\": \"2023-12-31T00:00:00Z\",\n            \"title\": \"coldplay3\",\n            \"description\": \"penyanyi luar negri\",\n            \"price\": 50,\n            \"Status\": \"available\",\n            \"Quota\": 100,\n            \"category\": \"music\",\n            \"Terjual\": 5\n        }\n    ]\n}"
+						}
+					]
+				}
+			],
+			"description": "Folder ini digunakan untuk memanpilkan seluruh data atau homepage yang berisikan tiket, blog, sign in , dan sign up."
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": " http://localhost:8080/api/v1"
+		},
+		{
+			"key": "Token-Admin",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IiIsImVtYWlsIjoiQWRtaW5AZ21haWwuY29tIiwicm9sZSI6IkFkbWluIiwiZXhwIjoxNzAxNDcxNTAzfQ.7njlsyp_kFCSby44lBnzcEDjze3OZoKj5Ow4EcooCMs"
+		},
+		{
+			"key": "Token-Buyer",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywibmFtZSI6IiIsImVtYWlsIjoiQnV5ZXIxQGdtYWlsLmNvbSIsInJvbGUiOiJCdXllciIsImV4cCI6MTcwMTU0MjA2OH0.6vamjQugLq5kOXi12XJNxpLp3QD2fwKMRLmRS9W5rcE",
+			"type": "string"
+		}
+	]
+}

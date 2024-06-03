@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"Rental/entity"
+	"Ticketing/entity"
 	"context"
 
 	"gorm.io/gorm"

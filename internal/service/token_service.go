@@ -1,9 +1,9 @@
 package service
 
 import (
-	"Rental/common"
-	"Rental/entity"
-	"Rental/internal/config"
+	"Ticketing/common"
+	"Ticketing/entity"
+	"Ticketing/internal/config"
 	"context"
 	"time"
 

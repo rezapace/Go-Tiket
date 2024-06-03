@@ -1,9 +1,9 @@
 package handler
 
 import (
-	"Rental/entity"
-	"Rental/internal/http/validator"
-	"Rental/internal/service"
+	"Ticketing/entity"
+	"Ticketing/internal/http/validator"
+	"Ticketing/internal/service"
 	"net/http"
 
 	"github.com/labstack/echo/v4"
@@ -93,5 +93,37 @@ func (h *AuthHandler) Registration(ctx echo.Context) error {
 	})
 
 }
+
+// BuyerCreateAccount
+// func (h *AuthHandler) BuyerCreateAccount(ctx echo.Context) error {
+// 	// Pengecekan request
+// 	var input struct {
+// 		Name     string `json:"name" validate:"required"`
+// 		Email    string `json:"email" validate:"required,email"`
+// 		Number   string `json:"number" validate:"required,min=11,max=13"`
+// 		Password string `json:"password" validate:"required,min=8"`
+// 	}
+
+// 	if err := ctx.Bind(&input); err != nil { // Di cek pake validate buat masukin input
+// 		return ctx.JSON(http.StatusBadRequest, validator.ValidatorErrors(err))
+// 	}
+
+// 	// Untuk manggil BuyerCreateAccount service di folder service
+// 	user := entity.Register(input.Email, input.Password, "Buyer", input.Number)
+// 	err := h.buyercreateaccountService.BuyerCreateAccount(ctx.Request().Context(), user)
+// 	if err != nil {
+// 		return ctx.JSON(http.StatusUnprocessableEntity, err)
+// 	}
+
+// 	accessToken, err := h.tokenService.GenerateAccessToken(ctx.Request().Context(), user)
+// 	if err != nil {
+// 		return ctx.JSON(http.StatusUnprocessableEntity, err)
+// 	}
+
+// 	return ctx.JSON(http.StatusOK, map[string]interface{}{
+// 		"message":      "Buyer account created successfully",
+// 		"access_token": accessToken,
+// 	})
+// }
 
 

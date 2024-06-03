@@ -1,11 +1,11 @@
 package main
 
 import (
-	"Rental/internal/builder"
-	"Rental/internal/config"
-	"Rental/internal/http/binder"
-	"Rental/internal/http/server"
-	"Rental/internal/http/validator"
+	"Ticketing/internal/builder"
+	"Ticketing/internal/config"
+	"Ticketing/internal/http/binder"
+	"Ticketing/internal/http/server"
+	"Ticketing/internal/http/validator"
 	"context"
 	"fmt"
 	"log"

@@ -5,7 +5,7 @@ package service
 import (
 	"context"
 
-	"Rental/entity"
+	"Ticketing/entity"
 )
 
 // interface untuk service
