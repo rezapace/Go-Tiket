@@ -1,11 +1,11 @@
 package builder
 
 import (
-	"Ticketing/internal/config"
-	"Ticketing/internal/http/handler"
-	"Ticketing/internal/http/router"
-	"Ticketing/internal/repository"
-	"Ticketing/internal/service"
+	"Rental/internal/config"
+	"Rental/internal/http/handler"
+	"Rental/internal/http/router"
+	"Rental/internal/repository"
+	"Rental/internal/service"
 
 	"github.com/midtrans/midtrans-go/snap"
 	"gorm.io/gorm"

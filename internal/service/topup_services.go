@@ -1,8 +1,8 @@
 package service
 
 import (
-	"Ticketing/entity"
-	"Ticketing/internal/repository"
+	"Rental/entity"
+	"Rental/internal/repository"
 	"context"
 
 	"github.com/midtrans/midtrans-go"

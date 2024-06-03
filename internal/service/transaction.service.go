@@ -3,7 +3,7 @@ package service
 import (
 	"context"
 
-	"Ticketing/entity"
+	"Rental/entity"
 )
 
 type TransactionUseCase interface {

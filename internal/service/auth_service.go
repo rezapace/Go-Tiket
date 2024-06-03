@@ -1,7 +1,7 @@
 package service
 
 import (
-	"Ticketing/entity"
+	"Rental/entity"
 	"context"
 	"errors"
 

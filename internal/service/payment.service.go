@@ -3,7 +3,7 @@ package service
 import (
 	"context"
 
-	"Ticketing/entity"
+	"Rental/entity"
 
 	"github.com/midtrans/midtrans-go"
 	"github.com/midtrans/midtrans-go/snap"

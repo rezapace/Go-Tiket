@@ -1,9 +1,9 @@
 package handler
 
 import (
-	"Ticketing/entity"
-	"Ticketing/internal/http/validator"
-	"Ticketing/internal/service"
+	"Rental/entity"
+	"Rental/internal/http/validator"
+	"Rental/internal/service"
 	"net/http"
 
 	"github.com/labstack/echo/v4"

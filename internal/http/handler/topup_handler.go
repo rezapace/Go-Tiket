@@ -1,8 +1,8 @@
 package handler
 
 import (
-	"Ticketing/entity"
-	"Ticketing/internal/service"
+	"Rental/entity"
+	"Rental/internal/service"
 	"net/http"
 
 	"github.com/golang-jwt/jwt/v5"

@@ -6,7 +6,7 @@ import (
 	"context"
 	"errors"
 
-	"Ticketing/entity"
+	"Rental/entity"
 
 	"gorm.io/gorm"
 )

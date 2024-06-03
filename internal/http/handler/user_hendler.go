@@ -3,10 +3,10 @@ package handler
 //NOTE :
 // FOLDER INI UNTUK MEMANGGIL SERVICE DAN REPOSITORY
 import (
-	"Ticketing/common"
-	"Ticketing/entity"
-	"Ticketing/internal/http/validator"
-	"Ticketing/internal/service"
+	"Rental/common"
+	"Rental/entity"
+	"Rental/internal/http/validator"
+	"Rental/internal/service"
 	"net/http"
 	"strconv"
 

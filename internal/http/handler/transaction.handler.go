@@ -3,11 +3,11 @@ package handler
 import (
 	"net/http"
 
-	"Ticketing/entity"
+	"Rental/entity"
 
-	"Ticketing/common"
-	"Ticketing/internal/http/validator"
-	"Ticketing/internal/service"
+	"Rental/common"
+	"Rental/internal/http/validator"
+	"Rental/internal/service"
 
 	"github.com/golang-jwt/jwt/v5"
 	"github.com/labstack/echo/v4"

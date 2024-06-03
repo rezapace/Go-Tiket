@@ -1,7 +1,7 @@
 package router
 
 import (
-	"Ticketing/internal/http/handler"
+	"Rental/internal/http/handler"
 
 	"github.com/labstack/echo/v4"
 )
