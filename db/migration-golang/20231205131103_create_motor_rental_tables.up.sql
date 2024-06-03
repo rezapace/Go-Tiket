@@ -5,6 +5,7 @@
        id SERIAL PRIMARY KEY,
        name VARCHAR(100) NOT NULL,
        email VARCHAR(100) NOT NULL UNIQUE,
+       number VARCHAR(100) NOT NULL UNIQUE,
        password VARCHAR(255) NOT NULL,
        role VARCHAR(10) CHECK (role IN ('Admin', 'Sewa', 'Penyewa')) NOT NULL,
        balance FLOAT DEFAULT 0.0,

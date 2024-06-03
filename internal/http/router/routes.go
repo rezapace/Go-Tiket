@@ -41,20 +41,13 @@ func PublicRoutes(
 			Path:    "/register",
 			Handler: authHandler.Registration,
 		},
-		{
-			Method:  echo.POST,
-			Path:    "/transactions/webhook",
-			Handler: transactionHandler.WebHookTransaction,
-		},
 	}
 }
 
 // membuat fungsi untuk mengembalikan route
 // pada func ini tdk perlu login krna public
 func PrivateRoutes(
-	UserHandler *handler.UserHandler,
-	transactionHandler *handler.TransactionHandler,
-	TopupHandler *handler.TopupHandler) []*Route {
+	UserHandler *handler.UserHandler) []*Route {
 	return []*Route{
 		{
 			Method:  echo.POST,
@@ -91,14 +84,6 @@ func PrivateRoutes(
 			Role:    onlyAdmin,
 		},
 
-		// topup
-		{
-			Method:  echo.POST,
-			Path:    "/topup",
-			Handler: TopupHandler.CreateTopup,
-			Role:    allRoles,
-		},
-
 		// getprofile
 		{
 			Method:  echo.GET,
@@ -114,42 +99,21 @@ func PrivateRoutes(
 			Handler: UserHandler.UpdateProfile,
 			Role:    allRoles,
 		},
-		{
-			Method:  echo.GET,
-			Path:    "/users/balance",
-			Handler: UserHandler.GetUserBalance,
-			Role:    onlyBuyer,
-		},
+
 		{
 			Method:  echo.DELETE,
 			Path:    "/users/deleteprofile",
 			Handler: UserHandler.DeleteAccount,
 			Role:    allRoles,
 		},
-		{
-			Method:  echo.POST,
-			Path:    "/user/topup",
-			Handler: TopupHandler.UserTopup,
-			Role:    onlyBuyer,
-		},
-		{
-			Method:  echo.POST,
-			Path:    "/user/upgrade",
-			Handler: UserHandler.UpgradeSaldo,
-			Role:    onlyBuyer,
-		},
+
 		{
 			Method:  echo.POST,
 			Path:    "/user/logout",
 			Handler: UserHandler.UserLogout,
 			Role:    allRoles,
 		},
-		{
-			Method:  echo.GET,
-			Path:    "/transactions/history",
-			Handler: transactionHandler.HistoryTransaction,
-			Role:    allRoles,
-		},
+
 	}
 }
 
